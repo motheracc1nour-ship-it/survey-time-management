@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>استبيان: إدارة الوقت وتحدي التسويف</title>
-    <!-- استدعاء خط تجوال لتصميم عربي أنيق -->
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -39,7 +38,6 @@
             box-sizing: border-box;
         }
 
-        /* تنسيق العناوين والمقدمة */
         h1 {
             color: var(--primary-color);
             text-align: center;
@@ -62,7 +60,6 @@
             font-size: 1.3rem;
         }
 
-        /* تنسيق الأسئلة */
         .question-block {
             margin-bottom: 25px;
             background: #FAFAFA;
@@ -83,7 +80,6 @@
             font-size: 1.1rem;
         }
 
-        /* تنسيق الخيارات (Radio & Checkbox) كأزرار أنيقة */
         .options-grid {
             display: flex;
             flex-wrap: wrap;
@@ -97,7 +93,7 @@
 
         .options-grid input[type="radio"],
         .options-grid input[type="checkbox"] {
-            display: none; /* إخفاء الشكل الافتراضي */
+            display: none;
         }
 
         .option-btn {
@@ -123,7 +119,6 @@
             transform: scale(1.02);
         }
 
-        /* تنسيق مقياس السلوك (Likert Scale) */
         .likert-group {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
@@ -142,7 +137,6 @@
             box-sizing: border-box;
         }
 
-        /* تنسيق السؤال المفتوح */
         textarea {
             width: 100%;
             padding: 15px;
@@ -164,7 +158,6 @@
             box-shadow: 0 0 0 4px rgba(74, 98, 138, 0.1);
         }
 
-        /* المرجع والخاتمة */
         .reference-box {
             background: #F8FAFC;
             border-right: 4px solid var(--primary-color);
@@ -175,7 +168,6 @@
             color: var(--text-muted);
         }
 
-        /* زر الإرسال */
         .submit-btn {
             display: block;
             width: 100%;
@@ -203,13 +195,12 @@
             transform: translateY(0);
         }
 
-        /* التوافق مع الهواتف الذكية */
         @media (max-width: 600px) {
             .container {
                 padding: 25px 15px;
             }
             .likert-group {
-                grid-template-columns: 1fr; /* عرض الخيارات بشكل عمودي على الموبايل */
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -217,14 +208,12 @@
 <body>
 
     <div class="container">
-        <!-- نقطة النهاية الخاصة بـ Formspree -->
         <form action="https://formspree.io/f/xjglnzpq" method="POST">
             
-            <h1>استبيان: إدارة الوقت وتحدي التسويف اليومي 📑</h1>
+            <h1>استبيان: إدارة الوقت وتحدي التسويف اليومي</h1>
             <p class="intro">مرحباً بك. يهدف هذا الاستبيان إلى دراسة عادات تنظيم الوقت ومدى تأثير "التسويف" على حياتنا اليومية. إجاباتك ستبقى سرية ولن تستغرق سوى دقيقتين من وقتك.</p>
 
-            <!-- القسم الأول -->
-            <h3>👥 أولاً: البيانات الأساسية</h3>
+            <h3>أولاً: البيانات الأساسية</h3>
             
             <div class="question-block">
                 <div class="question-title">1. الجنس:</div>
@@ -245,18 +234,18 @@
             </div>
 
             <div class="question-block">
-                <div class="question-title">3. الحالة الاجتماعية والمهنية الحالية (يمكنك اختيار أكثر من خيار):</div>
+                <div class="question-title">3. الحالة الاجتماعية والمهنية الحالية:</div>
                 <div class="options-grid">
-                    <label><input type="checkbox" name="الحالة_المهنية[]" value="طالب/طالبة"><span class="option-btn">طالب / طالبة</span></label>
-                    <label><input type="checkbox" name="الحالة_المهنية[]" value="موظف/موظفة"><span class="option-btn">موظف / موظفة</span></label>
-                    <label><input type="checkbox" name="الحالة_المهنية[]" value="متزوج/مسؤوليات عائلية"><span class="option-btn">متزوج / بمسؤوليات عائلية</span></label>
-                    <label><input type="checkbox" name="الحالة_المهنية[]" value="باحث عن عمل/ربة منزل"><span class="option-btn">باحث عن عمل / ربة منزل</span></label>
-                    <label><input type="checkbox" name="الحالة_المهنية[]" value="أعمال حرة/متقاعد"><span class="option-btn">أعمال حرة / متقاعد</span></label>
+                    <label><input type="radio" name="الحالة_المهنية" value="طالب/ة" required><span class="option-btn">طالب/ة</span></label>
+                    <label><input type="radio" name="الحالة_المهنية" value="باحث/ة عن عمل"><span class="option-btn">باحث/ة عن عمل</span></label>
+                    <label><input type="radio" name="الحالة_المهنية" value="موظف/ة"><span class="option-btn">موظف/ة</span></label>
+                    <label><input type="radio" name="الحالة_المهنية" value="متزوج/ة"><span class="option-btn">متزوج/ة</span></label>
+                    <label><input type="radio" name="الحالة_المهنية" value="عاطل/ة"><span class="option-btn">عاطل/ة</span></label>
+                    <label><input type="radio" name="الحالة_المهنية" value="متقاعد/ة"><span class="option-btn">متقاعد/ة</span></label>
                 </div>
             </div>
 
-            <!-- القسم الثاني -->
-            <h3>📊 ثانياً: مقياس السلوك</h3>
+            <h3>ثانياً: مقياس السلوك</h3>
             <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 20px;">يرجى تحديد مدى توافقك مع العبارات التالية بناءً على سلوكك الحقيقي في حياتك اليومية:</p>
 
             <div class="question-block">
@@ -314,21 +303,19 @@
                 </div>
             </div>
 
-            <!-- القسم الثالث -->
-            <h3>✍️ ثالثاً: السؤال المفتوح</h3>
+            <h3>ثالثاً: السؤال المفتوح</h3>
             <div class="question-block">
                 <label for="open_q" class="question-title" style="display:block; cursor:default;">من وجهة نظرك الشخصية، ما هو أكبر مشتت أو عائق يمنعك من إنجاز مهامك في الوقت المحدد؟ وكيف تحاول التغلب عليه؟</label>
                 <textarea id="open_q" name="السؤال_المفتوح" placeholder="اكتب إجابتك هنا بوضوح..." required></textarea>
             </div>
 
-            <p style="text-align: center; margin-top: 30px; font-weight: bold; color: var(--primary-color);">شكرًا جزيلاً لتقديم وقتك ومشاركتنا إجاباتك القيّمة!</p>
+            <p style="text-align: center; margin-top: 30px; font-weight: bold; color: var(--primary-color);">شكرًا جزيلاً لتقديم وقتك ومشاركتنا إجاباتك القيّمة.</p>
 
-            <button type="submit" class="submit-btn">إرسال الاستبيان 🚀</button>
+            <button type="submit" class="submit-btn">إرسال الاستبيان</button>
 
-            <!-- المرجع العلمي -->
             <div class="reference-box">
-                <strong>📚 المرجع العلمي (Reference):</strong><br>
-                مقياس تسويف الراشدين (Adult Procrastination Scale - APS) المطور بواسطة <strong>د. جوزيف فيراري (Dr. Joseph R. Ferrari)</strong> لقياس سلوكيات المماطلة وتأجيل المهام.
+                <strong>المرجع العلمي (Reference):</strong><br>
+                مقياس تسويف الراشدين (Adult Procrastination Scale - APS) المطور بواسطة الدكتور جوزيف فيراري (Dr. Joseph R. Ferrari) لقياس سلوكيات المماطلة وتأجيل المهام.
             </div>
 
         </form>
